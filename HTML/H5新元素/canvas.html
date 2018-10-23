@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="utf-8"> 
+<title>canvas画布</title> 
+</head>
+<body>
+<img id="img" align="middle" alt="这是一张图片" src="../images/001.jpg" width="180" height="120">
+<canvas id="myCanvas" width="600" height="400" style="border:1px solid #c3c3c3;">
+您的浏览器不支持 HTML5 canvas 标签。
+</canvas>
+
+<script>
+
+var c=document.getElementById("myCanvas");
+//得到context对象
+var ctx=c.getContext("2d");
+//红色矩形
+ctx.fillStyle="#FF0000";
+ctx.fillRect(0,0,150,75);
+//画线条
+ctx.moveTo(0,0);
+ctx.lineTo(200,100);
+ctx.stroke();
+//画圆
+ctx.beginPath();
+ctx.arc(250,150,40,0,2*Math.PI);
+ctx.stroke();
+//实心字
+ctx.font="30px Arial";
+ctx.fillText("Hello World",160,50);
+//空心字
+ctx.font="30px Arial";
+ctx.strokeText("Hello World",163,50);
+//创建渐变
+var grd=ctx.createLinearGradient(0,100,200,0);
+grd.addColorStop(0,"red");
+grd.addColorStop(1,"white");
+ 
+// 填充渐变
+ctx.fillStyle=grd;
+ctx.fillRect(0,100,150,80);
+//创建渐变
+var grd=ctx.createRadialGradient(0,250,3,60,200,100);
+grd.addColorStop(0,"red");
+grd.addColorStop(1,"white");
+ 
+// 填充渐变
+ctx.fillStyle=grd;
+ctx.fillRect(0,200,150,80);
+//展示图片
+var img=document.getElementById("img");
+ctx.drawImage(img,500,600);
+</script>
+
+</body>
+</html>

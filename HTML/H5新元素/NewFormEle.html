@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="#" oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+		需要input元素的list属性与datalist绑定 <input list="browsers" name="browser">
+		<datalist id="browsers">
+			<option value="Internet Explorer">
+			<option value="Firefox">
+			<option value="Chrome">
+			<option value="Opera">
+			<option value="Safari">
+		</datalist>
+		<br> 用户名: <input type="text" name="usr_name"> 加密
+		<keygen name="security"><br>
+		0<input type="range" id="a" value="50">100 +<input
+			type="number" id="b" value="50"> =
+		<output name="x" for="a b"></output>
+	</form>
+
+</body>
+</html>
